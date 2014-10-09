@@ -2,9 +2,9 @@
   var app = angular.module('gemStore', ['store-directives']);
 
   app.controller('StoreController', ['$http', function($http){
-  	var store = this;
-  	store.products = [];
-    $http.get('js/store-products.json').success(function(data){
+    var store = this;
+    store.products = [];
+    $http.get('/js/store-products.json').success(function(data){
     	store.products = data;
     });
   }]);
@@ -18,5 +18,4 @@
       this.review = {};
     };
   });
-
 })();
